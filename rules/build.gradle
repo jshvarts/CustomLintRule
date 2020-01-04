@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+dependencies {
+    compileOnly "com.android.tools.lint:lint-api:26.5.3"
+    compileOnly "com.android.tools.lint:lint-checks:26.5.3"
+}
