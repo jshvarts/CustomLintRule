@@ -8,5 +8,5 @@ class IssueRegistry : IssueRegistry() {
   override val api: Int = CURRENT_API
 
   override val issues: List<Issue>
-    get() = listOf(AndroidLogDetector.ISSUE)
+    get() = listOf(AndroidLogDetector.ANDROID_LOG_ISSUE)
 }

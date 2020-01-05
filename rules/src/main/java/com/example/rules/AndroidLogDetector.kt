@@ -12,7 +12,7 @@ class AndroidLogDetector : Detector(), SourceCodeScanner {
       Scope.JAVA_FILE_SCOPE
     )
 
-    val ISSUE: Issue = Issue
+    val ANDROID_LOG_ISSUE: Issue = Issue
       .create(
         id = "AndroidLogDetector",
         briefDescription = "The android Log should not be used",
@@ -42,7 +42,7 @@ class AndroidLogDetector : Detector(), SourceCodeScanner {
 
   private fun reportUsage(context: JavaContext, node: UCallExpression) {
     context.report(
-      issue = ISSUE,
+      issue = ANDROID_LOG_ISSUE,
       scope = node,
       location = context.getCallLocation(
         call = node,
