@@ -4,6 +4,12 @@ apply plugin: 'kotlin'
 sourceCompatibility = "7"
 targetCompatibility = "7"
 
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.example.rules.LibraryIssueRegistry")
+    }
+}
+
 dependencies {
     compileOnly "com.android.tools.lint:lint-api:26.5.3"
     compileOnly "com.android.tools.lint:lint-checks:26.5.3"
