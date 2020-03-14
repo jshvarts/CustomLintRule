@@ -13,4 +13,21 @@ jar {
 dependencies {
     compileOnly "com.android.tools.lint:lint-api:26.5.3"
     compileOnly "com.android.tools.lint:lint-checks:26.5.3"
+    testImplementation "com.android.tools.lint:lint-tests:26.5.3"
+    testImplementation "org.junit.jupiter:junit-jupiter:5.6.0"
+}
+
+tasks.test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter'
+    }
+    afterSuite { desc, result ->
+        if (!desc.parent) {
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: ${result.testCount} tests, " +
+                    "${result.successfulTestCount} succeeded, " +
+                    "${result.failedTestCount} failed, " +
+                    "${result.skippedTestCount} skipped"
+        }
+    }
 }
