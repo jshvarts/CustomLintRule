@@ -4,7 +4,7 @@ import com.android.tools.lint.detector.api.*
 import com.intellij.psi.PsiMethod
 import org.jetbrains.uast.UCallExpression
 
-class AndroidLogDetector : Detector(), SourceCodeScanner {
+internal class AndroidLogDetector : Detector(), SourceCodeScanner {
 
   companion object {
     private val IMPLEMENTATION = Implementation(
